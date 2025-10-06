@@ -1,0 +1,1255 @@
+{
+  "version": 4,
+  "terraform_version": "1.12.2",
+  "serial": 39,
+  "lineage": "6a5041e8-a83b-5e08-d98d-975bbed88a80",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "azurerm_client_config",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "client_id": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+            "id": "Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9OTQzZDNmMjYtNDBkNi00YzAyLWIxZWMtMjc5N2ZhOGNmMTBjO3N1YnNjcmlwdGlvbklkPTgwNjQ2ODU3LTkxNDItNDk0Yi05MGM1LTMyZmVhNmFjYmM0MTt0ZW5hbnRJZD04NGY1OGNlOS00M2M4LTQ5MzItYjkwOC01OTFhOGEzMDA3ZDM=",
+            "object_id": "943d3f26-40d6-4c02-b1ec-2797fa8cf10c",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41",
+            "tenant_id": "84f58ce9-43c8-4932-b908-591a8a3007d3",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_container_registry",
+      "name": "acr_main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "admin_enabled": true,
+            "admin_password": "k31PcX4GrzPP3bZTMnzBY+P3i3ReSw/p48CpvbX7cu+ACRBJordy",
+            "admin_username": "acrbgbuilderprod2147",
+            "anonymous_pull_enabled": false,
+            "data_endpoint_enabled": false,
+            "data_endpoint_host_names": [],
+            "encryption": [],
+            "export_policy_enabled": true,
+            "georeplications": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.ContainerRegistry/registries/acrbgbuilderprod2147",
+            "identity": [],
+            "location": "eastus",
+            "login_server": "acrbgbuilderprod2147.azurecr.io",
+            "name": "acrbgbuilderprod2147",
+            "network_rule_bypass_option": "AzureServices",
+            "network_rule_set": [],
+            "public_network_access_enabled": true,
+            "quarantine_policy_enabled": false,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "retention_policy_in_days": 0,
+            "sku": "Standard",
+            "tags": {},
+            "timeouts": null,
+            "trust_policy_enabled": false,
+            "zone_redundancy_enabled": false
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIyIn0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "random_integer.random"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_key_vault",
+      "name": "kv_main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "access_policy": [],
+            "contact": [],
+            "enable_rbac_authorization": false,
+            "enabled_for_deployment": false,
+            "enabled_for_disk_encryption": false,
+            "enabled_for_template_deployment": false,
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.KeyVault/vaults/kv-bgbuilder-prod-2147",
+            "location": "eastus",
+            "name": "kv-bgbuilder-prod-2147",
+            "network_acls": [
+              {
+                "bypass": "AzureServices",
+                "default_action": "Allow",
+                "ip_rules": [],
+                "virtual_network_subnet_ids": []
+              }
+            ],
+            "public_network_access_enabled": false,
+            "purge_protection_enabled": true,
+            "rbac_authorization_enabled": false,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "sku_name": "standard",
+            "soft_delete_retention_days": 7,
+            "tags": {},
+            "tenant_id": "84f58ce9-43c8-4932-b908-591a8a3007d3",
+            "timeouts": null,
+            "vault_uri": "https://kv-bgbuilder-prod-2147.vault.azure.net/"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIyIn0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "data.azurerm_client_config.current",
+            "random_integer.random"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_kubernetes_cluster",
+      "name": "aks_main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 2,
+          "attributes": {
+            "aci_connector_linux": [],
+            "api_server_access_profile": [],
+            "auto_scaler_profile": [],
+            "automatic_upgrade_channel": "",
+            "azure_active_directory_role_based_access_control": [],
+            "azure_policy_enabled": null,
+            "bootstrap_profile": [
+              {
+                "artifact_source": "Direct",
+                "container_registry_id": ""
+              }
+            ],
+            "confidential_computing": [],
+            "cost_analysis_enabled": false,
+            "current_kubernetes_version": "1.30.14",
+            "custom_ca_trust_certificates_base64": [],
+            "default_node_pool": [
+              {
+                "auto_scaling_enabled": false,
+                "capacity_reservation_group_id": "",
+                "fips_enabled": false,
+                "gpu_driver": "",
+                "gpu_instance": "",
+                "host_encryption_enabled": false,
+                "host_group_id": "",
+                "kubelet_config": [],
+                "kubelet_disk_type": "OS",
+                "linux_os_config": [],
+                "max_count": 0,
+                "max_pods": 30,
+                "min_count": 0,
+                "name": "systempool",
+                "node_count": 1,
+                "node_labels": {},
+                "node_network_profile": [],
+                "node_public_ip_enabled": false,
+                "node_public_ip_prefix_id": "",
+                "only_critical_addons_enabled": false,
+                "orchestrator_version": "1.30",
+                "os_disk_size_gb": 30,
+                "os_disk_type": "Managed",
+                "os_sku": "Ubuntu",
+                "pod_subnet_id": "",
+                "proximity_placement_group_id": "",
+                "scale_down_mode": "Delete",
+                "snapshot_id": "",
+                "tags": {},
+                "temporary_name_for_rotation": "",
+                "type": "VirtualMachineScaleSets",
+                "ultra_ssd_enabled": false,
+                "upgrade_settings": [
+                  {
+                    "drain_timeout_in_minutes": 0,
+                    "max_surge": "10%",
+                    "node_soak_duration_in_minutes": 0
+                  }
+                ],
+                "vm_size": "Standard_B2s",
+                "vnet_subnet_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-ops",
+                "workload_runtime": "",
+                "zones": []
+              }
+            ],
+            "disk_encryption_set_id": "",
+            "dns_prefix": "burgerbuilder",
+            "dns_prefix_private_cluster": "",
+            "edge_zone": "",
+            "fqdn": "",
+            "http_application_routing_enabled": null,
+            "http_application_routing_zone_name": null,
+            "http_proxy_config": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.ContainerService/managedClusters/aks-burgerbuilder-prod-2147",
+            "identity": [
+              {
+                "identity_ids": [],
+                "principal_id": "08169da8-a59b-41d8-8b50-b359861f3bc3",
+                "tenant_id": "84f58ce9-43c8-4932-b908-591a8a3007d3",
+                "type": "SystemAssigned"
+              }
+            ],
+            "image_cleaner_enabled": null,
+            "image_cleaner_interval_hours": null,
+            "ingress_application_gateway": [],
+            "key_management_service": [],
+            "key_vault_secrets_provider": [],
+            "kube_admin_config": [],
+            "kube_admin_config_raw": "",
+            "kube_config": [
+              {
+                "client_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZIakNDQXdhZ0F3SUJBZ0lSQUo2Yk9lVVY1Smxmd3RHakhkNXl1aUF3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVeE1EQTJNVEV4TURRMldoY05NamN4TURBMk1URXlNRFEyV2pBdwpNUmN3RlFZRFZRUUtFdzV6ZVhOMFpXMDZiV0Z6ZEdWeWN6RVZNQk1HQTFVRUF4TU1iV0Z6ZEdWeVkyeHBaVzUwCk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBc3dxcnd5TjNVdG1TTkgrWFg1RkIKYVlnZytoeStEY2U1dXp0TFYya2hoN3ltNTZGZjI4TllzZWNnRy9ldzNwdXNzcEJoRG5hVXdHTzd0aU5lZVVXego4RW85UkZidWgrY0p5bDBSdWxZSDF2L0JlcjJQQUt1aDhsbTJWdXFhdXQ0eWl3NWZ2NFpnYXFzY0FrMGEwSkFRCjJ3TFhidmkzMXdvRVdhSnhpRm8wZ0dvRGMvY2JrSGlPM05FTC9hbnMyMHkzVzVIZlRiNW5OcFRHRDVtb0RBMzIKVWJmV3FLVGtXV2JMU1RmTXBLaGM2aUs4UjZJQlhMM2RQU0RNeExFZFl6TUsyczlGZ3NFZWMyRkFjOEE2cnpNMwp2TDFVS2ZvQW5wNGxxTWk1Y2FzUmVFdStiSzB0UWpnU0RBOFczTGZReTRHNHlybU5xWHVQTk4zSVd6aUkzTGZrCnBpNlN0dnZobUpza1ZWUmNwTFQ2NExrbXFXaElNS0FGWDc1UHpZU3JoY21rODY4d08xNStKRTRNZ0ZoVHVWMHEKZzBCbEY3WHBGYlE5ODBmQkpDWm0ya1I2bnRKWW5aWjk3eTN6dXdQc0FHM3RiZHpKcWM3Q2xscDFxQkZkdTFsegpxam9VVlVNN2tNbEltVGVCbjRndlhWaHBjMkhRR1FMbFBTWHlTTDY5SUpIVk1ENjdWcFV3V3pBM0ZsdkhiY3ZLCnlOQW8rVE8wOExaL29JRkhQZ1U2WlV5SWZ1QnByQ3N3RzEwQkZRMmI0QUlUREN0Uit2SFpBZ2J0MGwyaEg0S1kKYktEdXBPVVE3SUFtSHhaeWJUV3Mwa1BmSkVQNU80Z2hMTDlxRE1lbS9CVWV4dWNtVzlPRXVlZmU3NzNyKzhOYwpaTDYrKzR5elgxbkxGTGdzcElMTXU0Y0NBd0VBQWFOV01GUXdEZ1lEVlIwUEFRSC9CQVFEQWdXZ01CTUdBMVVkCkpRUU1NQW9HQ0NzR0FRVUZCd01DTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVQUN6SVB2eDYKeWFrUGxmRFJOZDB4MWlIb3ZGMHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBSndQazRRWHlSU1ZGcTdWYjV4RApNOTBsQ2hYbXh6Tjc5TG9ZSDdtdFNCd2RxM3RNTjJudFJRR0hJS1ljQWtMLzBDcjBWaTVBRjA1NUlDUURzNEl4Ckp0RUZvREYvd08vaW84WmswVnVxL1FGRUpabWF1cEFxUWZZTWFXejV5eGVuTFAxL0huMXZ2dDRFeTBCQ1VQOTMKSFhMOW54eTh6eXJDR2FMb3ZKS3p0UC9JZ2I5YmpETktLcVArTUNVMWNWSHZUQ1Q2RmFVVjVsdlQ3alFGd2V0NApWU3VxeUttTnZSRS84N2VCYWN0NEhGcWpoWFI3OXo1eWhBdmRvZER1ZzdyakNiUnloM3lMWTB0Ry9RekhYRUNBCmFuckUvTHdtaUJxbzB5NlVWcjh6ZkxQQ2Z6TmlSNnJNbXd4bTFJaXhYTHZYbjJCemhLdTREcmdNSUJ0anhKTysKSWk0bGg1MmN4YjE4SGFtWlZKWng3Rk1NanhBUHRmQ01YTVdFeGVQckxXcVVDbEtYbWxNWktDemlOenZZTXlPagpQbHdId2d0V3hNU1I3Y1dMWTAyVW9lY3VDRW1zdUx2YWNFTzBtVTc3RGFrd3hRSjV1cDV2S29rejQ0ckh1WnlwCnJkVnB4YkF6Tm5EQWViZ3k1OWlFZXBaTFdHUHU5cnhRYXl0WU5wTEhrWE9KTWo1aHRPNUk4WXVmTndxOFB6YW8KNTcyeC9haG5MR09WMlFtdE9IU0xPVUpqQ01VZlo2ekJlbWkyMU1TcWpDQ0xranJiNllQc1orbkc1eUVUTUZsQwpPN0Z3UXBDRU1XR3Q0MmNUOVBwZzdUZGI5NjJkdFV4ZXRJaHB5ZTladmkyYWgyNGhIK3NiM1N2clpKRHBPbzczCldsUEx3dHJyN0RvbndpZm05NVluWTVsVwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                "client_key": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS0FJQkFBS0NBZ0VBc3dxcnd5TjNVdG1TTkgrWFg1RkJhWWdnK2h5K0RjZTV1enRMVjJraGg3eW01NkZmCjI4TllzZWNnRy9ldzNwdXNzcEJoRG5hVXdHTzd0aU5lZVVXejhFbzlSRmJ1aCtjSnlsMFJ1bFlIMXYvQmVyMlAKQUt1aDhsbTJWdXFhdXQ0eWl3NWZ2NFpnYXFzY0FrMGEwSkFRMndMWGJ2aTMxd29FV2FKeGlGbzBnR29EYy9jYgprSGlPM05FTC9hbnMyMHkzVzVIZlRiNW5OcFRHRDVtb0RBMzJVYmZXcUtUa1dXYkxTVGZNcEtoYzZpSzhSNklCClhMM2RQU0RNeExFZFl6TUsyczlGZ3NFZWMyRkFjOEE2cnpNM3ZMMVVLZm9BbnA0bHFNaTVjYXNSZUV1K2JLMHQKUWpnU0RBOFczTGZReTRHNHlybU5xWHVQTk4zSVd6aUkzTGZrcGk2U3R2dmhtSnNrVlZSY3BMVDY0TGttcVdoSQpNS0FGWDc1UHpZU3JoY21rODY4d08xNStKRTRNZ0ZoVHVWMHFnMEJsRjdYcEZiUTk4MGZCSkNabTJrUjZudEpZCm5aWjk3eTN6dXdQc0FHM3RiZHpKcWM3Q2xscDFxQkZkdTFsenFqb1VWVU03a01sSW1UZUJuNGd2WFZocGMySFEKR1FMbFBTWHlTTDY5SUpIVk1ENjdWcFV3V3pBM0ZsdkhiY3ZLeU5BbytUTzA4TFovb0lGSFBnVTZaVXlJZnVCcApyQ3N3RzEwQkZRMmI0QUlUREN0Uit2SFpBZ2J0MGwyaEg0S1liS0R1cE9VUTdJQW1IeFp5YlRXczBrUGZKRVA1Ck80Z2hMTDlxRE1lbS9CVWV4dWNtVzlPRXVlZmU3NzNyKzhOY1pMNisrNHl6WDFuTEZMZ3NwSUxNdTRjQ0F3RUEKQVFLQ0FnQklZaTZKNEd0TDJBRlhieVFFTTRYMkE5Nk5MNVNZbnFBVXRZYWlxckt2SFZKKy84dHczaHVjSlB4aQp3ak5EOUQwUUhmWFhNcEsxNnp4SENTcVhMZHB1OFp5dVpkVGVwY1hjQmQ5MmJYU1M4K2hGVnFDYlhVaEdZZ1dwClF3VFdPcUhGZlVTeGVrSzlyVHJRSlZzTGFjc2V1Qm5mMS9iL0hhSWZtT0I4aHplRm1SYVhTaFpmUkpaQmFOU0gKczZ5NkJseDB6VmN4cDZJenUxY05sSW9QZ1krTmZ4enVKbWZaU3dreHF6ajFjc25Kc014Y3kzN3dmeVFVSkJBVgpEeVA1NkhkaGVmMjR2Sm15Zk9WaFJweVRHMHBUNkZrLzlUNU40bE1JVjBvOXpiTHM1dlp3R2wxYlVhN2VLRFdPCmUxUVRDbmxxb0RUSkNkYWVRWEhRaTEwdG1yejUwdXJTMUpZQ3hGNnVCaGIrMUdpTzVNcGtjMTEvWUdoTlRWY0gKdGVVWEJnRmJKU0t5YnN2MGtsRjV6L2psL1VBL1ZQVWQ4eEpldjVTeERFNmplTGdJSk41VFhuSzFmRzQ1SjRGZgppY01FNkhJQWVncXdqeTNTbHZkMFJrKzNsVzdDUVBHY2ozRW5XYWF1QXRIRVg3aWxVQXhxZ0o3VTBTaHljaTlaCkYySE5xM290KzFZL3VlOS9PeFBMZ1h2eW5tU2FhcGI5enlyS0d3Q01sM3JXdGQzOHN6bHNlQ1QvZFpYZnBHQW0KdlUxN0cvbEY4aVZQdEVrbnkwKzNKUStwQ0wrNWNFVzVtcEtZUGIwb3F1SktDaDZnMGlDMGJTTFlVcURkcm1pVgpTMW1qMi9LL0xkY0YwZmpRS2lKNmF5WHg5a291U0VtZ2dsTTVzUlhDdGxyVlNQOU5nUUtDQVFFQTV3cVFPOTJhCmNDald5MTFtb3pielcrU0UrQ0NYN0FnMzV6QW96dS8xMStDYS80TjhzcHYxTUVtQm04OGhEMHZ4SEUyR2RFdHUKRVU1aUtPUTBkeCtEY0NrQU9OK0EyUzZNOUlDZ1Jvcnc0N1F2Q2ptbFIwVVVEMTlNVS9HS2hQZzJXbytQQnZPVApTYjY4QlpiSTdiL21jZkhUbVhPY3RMcW1IVTVnM0ZpSnQwZTdYVzhYT3hOclFYWHR0alNMWXFtdGRqYVpOV1JEClB2ZkVDamNCN1ZhQ2tYMkkwVlZCMGJvQllraW1pVE9yLzBabjVBYjRNZ2JlNUFzbmNDMkUzSm5PNyszMlNtSDgKZzdYTXR0RnVxV096QndhYzZPOElNeGNtUDU0bFVob3BMMnAvZGtVL2x2c3c4UDhiM0VRQ3ZNM08vNUpNQVo1SQpRTXNzdHMwWWhXeGJCd0tDQVFFQXhtSVBzVW1TQ1YwcDc4NDVGYkJ2blZXSUcrY0NKb0xWRzZFQjlxMkhhK3pQClBBUmlMQklUT3FHZ1F2M3IyR3BuVTV4QWdSRnNDcWRBRU43aFpwaWFWL3ZDc3ZFQkNZSHdleDRGTW0zYUFNY0cKejdYdU01eFFUeFBMcS80UEtvVHFMcjBrZk9uSVlOaktuK1c4SVNOajVlVWZrVHg1MVB1WHlUNnl4Ujl6dzIyUQpDUGFJL0FXclk3bzlicEYvTmxhNllhaHY5cFJxVmxTYzZiTDRZN3J6cmp3UHljZDhSWTNxaVZWMUxMOEttWmMrCnp3cTRtMXVWWVZyb04wUTJBbnlSZUJBVVpVS1lIZEV4cm9QTklLMlpFWVFvMHZBak93NWhSVzQyNUNxVlRrOGMKbHN2Rkt0RFpXNURQcUc4bEFBRTI1U0gyZkxQNkpIV1JSTEFsWXJYN2dRS0NBUUVBcytLRG5qalJ6OVhjTndhSApyVGhSamhDRWZ2UlJsTkpwUkRVNDhMWGdRYTU4djhoT1JIb3RFdVdJWmhtRThmWDh5ajZLR3UzSHl1MnVlNHdDClZXVlIzdmZ0VmxxZVpYcGJBTnRNN3QrcTRuOGR5T1pOQ3dwN3JlUlM5MkN1cXd6ZXRPL2xPbEpYTVNteUZ0L3AKblVLMlY2MGpST3pBNis0TysrNVVkL3J2YnFZSStaeFBDQTM4aWtFWlRhM25nRy8vd0hTT0lRWHBYWk5uTFZUYQp5VUY3ODI4OElWQXlLT3FidlR3M2ZjZWZlT2dHWjRJTnFGVzFJUFNXUmo4S25QK2NJUzZ6ZmdLQXFzUFhtZGZDClExeCt2VStteDYya1FyTVpjcHJkRCttU2UzcDl0MFgvVnJ4SXhMcTdwR25IZjl6MStBS2Q3dnlmNE9MUDg1d0kKSlluUjdRS0NBUUJadkkvV3BTM2UrSHA0MURMMFFhd3JZajVBU04yckovRllIeHV4UnN1RUlVbVluMjc4K213aQpVR3diQVp0R2VOTW1lZjZmbzQ3WXZ0RDNFS3FxNndxZUUrNzlYSkVZaU9PTC9ZZGlTVmljazJyY1dESll2RE9ECm9iTzJxQ1NhR2llSVh0eDdlSkRBWmpBNTVnU1VoTnF5YWxNK01qbjJBcHlsVnF3dENNNG5yNDdBenl3bHZEYkwKMUxubkl2K0ZSL1BsS3ZrQ2RCNHAwUHB0cUJ3OW1KcVR6TzFqVzg0MTlEME1SRkRObmRrZ29zNnhmdXNFczRlOQowdzVKdVp3b3djcFhvZ1pueTVqZG0vdzZNYnAvTnFlUHlkVmhuV2lDVlQzZzF6c1RPTVB5K1V3NFZoSnBETEhWCmZvckFhUTQyazFZT2phOWV0MWJHV1R3Tjh4UG1NK1dCQW9JQkFDd0pWVnJhN25XL012aER6UkdqQlJjcGR1YmcKN1ZLSExmOHl5VVNpNlZGVHhnbTFBU0VUWVE1bTFwY0RKMkZwQkJFSUx1dFZqbDBDT2VNK3Z2c3FyRXcySlBtbgorYm5oaE1FR0t6bGZ3aUNlWnZmS3F4YlBFbG15Q2dXbzJrMXFaNGFPSDBDQUFZMis1ZkhENlJPb0Y1eTg3ZjdRCnRabWxTWnFCaHpFaGdUWVlkN25NWW91VzNiemNNbWlSYytKd2VHN1BGN0ZJcEl2YTlzNXh6Y2FBeEdmYnBSOUcKZUd5a2pFZEVEbm5uMEYxWktkNk5HdmJkcFVydXAyemNCaU5LZEwycERmWTMvTEJ4QnU1ZGFwZnFTRjFINmdHbQpEKzlLU25RVEVFZTl5RDkvSmhrdUs4OWxCYlFob3lQQm9VRHQ3czYyWnhLeGpWZlYwZXBjWFZRWitsZz0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K",
+                "cluster_ca_certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU5wYjdVcEZQQXBXQy8yOTFYakdMdll3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpVeE1EQTJNVEV4TURRMldoZ1BNakExTlRFd01EWXhNVEl3TkRaYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCnJPQlF3czdGbTRPS3Y4bUwvUXR0cktqcFVCWCtkSGtQYWFaTWNlMjI1T0twZ1RveHlxZVk1NEVqdVhNM3g4M2kKbEFiMDVzS2hUTTNXRUpyWDk2Nm1JdmNQMlo3TDRPVjhjY0NwZkRzbEJaU0FqR0tpazR5cWM2ZnN4N0FGVkJKWgp2amx2Q1o5ODdvRWtwVU5ldzJpVVRtaUMzcTAxOWdENkpvVGtrdStQS2ZGWG1qRVhYdHRXcTJCcnZ0ZzBLUnZ3CmZ3bDcvVTZveTdURElJNVZ4QWNMUXlLT2FYTUdqVFdRbDNqanhsTkkreTExRjZPQWpmWnVCZFBpSSs3aUtQSHQKcG9yTHU1TFRUb2dybWlHNW1ZWU1CY05PSUJaQUduZ2FYcGNxYXhHSWV3VkkxcUx0VmtKL2oxeVhXVjlvNTh2dgpqcUJiQTVPczJITzVhZ3lsdTJmbmIwbkZUUE5ST2lmQXFTdGsrYU9jRTN4ZDFiYjM3R1VZYkR2aHNYMHQvSXRJCmJqZThnYVowaSsvcnVEMnk1M1VhLzVLL0c0YzYxR2NtOTJMWnJKTkd6OWdnMThyY0V6a3UvZXA2RC9hNitpM0YKQVlXTmFCcU8rL3JsVE16eFpOckxXNGNoYm1TcWdndFdsWVd6Z2cyWHFSOFF3cGR0amExemRmMkFQbURFZ0hDVgpRZkNDOHBrdU5kUExFcytiL2p6Ym1JQm82MjkwM3ZrUWdTcmdaTUllb0l3Tm8vZkZHb2tSZmVJNEwxaVd6TVp6ClVJbG9tdjRCa3MwYnc3WkZRanhneEIvRmZEMUpORXRTbkF4OExIRjdaaE1jUzRzYzNuMEw5SjZIQmRjR1pFN08KVlNKZmNlUUNianB1U0ZFNTNCcXQ5NnNHOVkrdDdEQUJtVmgrUXdMS1VyOENBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQUFzeUQ3OGVzbXBENVh3CjBUWGRNZFloNkx4ZE1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQmllby8rM2RIZUE3ZDQ0dllHWVBZNnYwMGIKMlN5ZTVpejlnc1lZdnlxeWJGTTRyMWdocC9SSGFtRTNsYm4rZ2JqK1ptNmx3eDIyaWhOVm5jeGhGSjJlZnFHLwovYnZXdVV4RCtnUlFZKyt2R0lxWFJhMEk4UkFnSzNIZ1EwcUZOMGtRcUdnbFNFK1MrMjJaeEpXOHg2YVhlRy9ICmE3K0htdnBkallmc2Z1WHJiRG5sQzBUbDlNdTRaZkE1aUhNdzJLK1Z2Q0RYcHZHTTRuMmUzRUdnT2NiR2J6Y2QKQzlDbVFUYVZ4alBBc0EvWm41cnBUOVRtc2YrK085VkV5eEJ2cmd2ajBpWDFFSjNLQyttZ2hyN1BzU1lpV2R0dApoTTdrL2toTUwwTTB6d29nNGM1VHdCcDdGL0ZoZnphcFBWQjF1TXpQU1l0R29XUERXV2d5Rm41Nit4Y0VTODZPCld4MEVaNVBWSFBVQnZRSGlmN1RtWG43UDFNRldyWmN3c213ZHRkUGluN1lxbHhUVnc2OGM3bW52dXppcWZIWEoKUHIrRXlqa25nOE5oaGJTRjFxTDRrZlVhS1RKTUFSSGJSODk2SjJWNU9TYzhOTS9SZmdiNktyU3B5VFhiOXhMNQpEQzhMdkl5Qm1kV241VXB3UThRelI3TWRoM0RDSytudy9xZ0MzUWt6V3diODBWdnh2UVdBMERjTlNQZDVtVWJkCjhXUnd3QUg2Q0pBR2ZRWllHQmtucGNoeWo1c1dUNm5tdXRnN2w0TXA5ckhmN0cvRFlQbHBMR1hQbFNlbGs3R2oKVGtLSlFwcFhLbGNDZUxBNmsxbitmdjY1dXpjNnFhRjZNZnIxbmlPUEtlRFpRdHhIeW1GbUZkbGdPaW13K0FvVwpkSHdsSEtKRHk0VjR5TDA2M0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+                "host": "https://burgerbuilder-bkf4rsmk.d1ef29e5-8a16-47b8-89be-7567f850215d.privatelink.eastus.azmk8s.io:443",
+                "password": "tr658dbgpu9c42uxfezta7xm3n5f734q7x8g7kpsnel112a809um0h4b2hkapbbnv7kjwkxxelv0a2dm8mmn1w70zwgm2ogpeo75gaxj6ffwfjizvzav65qpgdarjxt8",
+                "username": "clusterUser_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147"
+              }
+            ],
+            "kube_config_raw": "apiVersion: v1\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUU2VENDQXRHZ0F3SUJBZ0lSQU5wYjdVcEZQQXBXQy8yOTFYakdMdll3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdJQmNOTWpVeE1EQTJNVEV4TURRMldoZ1BNakExTlRFd01EWXhNVEl3TkRaYQpNQTB4Q3pBSkJnTlZCQU1UQW1OaE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBCnJPQlF3czdGbTRPS3Y4bUwvUXR0cktqcFVCWCtkSGtQYWFaTWNlMjI1T0twZ1RveHlxZVk1NEVqdVhNM3g4M2kKbEFiMDVzS2hUTTNXRUpyWDk2Nm1JdmNQMlo3TDRPVjhjY0NwZkRzbEJaU0FqR0tpazR5cWM2ZnN4N0FGVkJKWgp2amx2Q1o5ODdvRWtwVU5ldzJpVVRtaUMzcTAxOWdENkpvVGtrdStQS2ZGWG1qRVhYdHRXcTJCcnZ0ZzBLUnZ3CmZ3bDcvVTZveTdURElJNVZ4QWNMUXlLT2FYTUdqVFdRbDNqanhsTkkreTExRjZPQWpmWnVCZFBpSSs3aUtQSHQKcG9yTHU1TFRUb2dybWlHNW1ZWU1CY05PSUJaQUduZ2FYcGNxYXhHSWV3VkkxcUx0VmtKL2oxeVhXVjlvNTh2dgpqcUJiQTVPczJITzVhZ3lsdTJmbmIwbkZUUE5ST2lmQXFTdGsrYU9jRTN4ZDFiYjM3R1VZYkR2aHNYMHQvSXRJCmJqZThnYVowaSsvcnVEMnk1M1VhLzVLL0c0YzYxR2NtOTJMWnJKTkd6OWdnMThyY0V6a3UvZXA2RC9hNitpM0YKQVlXTmFCcU8rL3JsVE16eFpOckxXNGNoYm1TcWdndFdsWVd6Z2cyWHFSOFF3cGR0amExemRmMkFQbURFZ0hDVgpRZkNDOHBrdU5kUExFcytiL2p6Ym1JQm82MjkwM3ZrUWdTcmdaTUllb0l3Tm8vZkZHb2tSZmVJNEwxaVd6TVp6ClVJbG9tdjRCa3MwYnc3WkZRanhneEIvRmZEMUpORXRTbkF4OExIRjdaaE1jUzRzYzNuMEw5SjZIQmRjR1pFN08KVlNKZmNlUUNianB1U0ZFNTNCcXQ5NnNHOVkrdDdEQUJtVmgrUXdMS1VyOENBd0VBQWFOQ01FQXdEZ1lEVlIwUApBUUgvQkFRREFnS2tNQThHQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQUFzeUQ3OGVzbXBENVh3CjBUWGRNZFloNkx4ZE1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQ0FRQmllby8rM2RIZUE3ZDQ0dllHWVBZNnYwMGIKMlN5ZTVpejlnc1lZdnlxeWJGTTRyMWdocC9SSGFtRTNsYm4rZ2JqK1ptNmx3eDIyaWhOVm5jeGhGSjJlZnFHLwovYnZXdVV4RCtnUlFZKyt2R0lxWFJhMEk4UkFnSzNIZ1EwcUZOMGtRcUdnbFNFK1MrMjJaeEpXOHg2YVhlRy9ICmE3K0htdnBkallmc2Z1WHJiRG5sQzBUbDlNdTRaZkE1aUhNdzJLK1Z2Q0RYcHZHTTRuMmUzRUdnT2NiR2J6Y2QKQzlDbVFUYVZ4alBBc0EvWm41cnBUOVRtc2YrK085VkV5eEJ2cmd2ajBpWDFFSjNLQyttZ2hyN1BzU1lpV2R0dApoTTdrL2toTUwwTTB6d29nNGM1VHdCcDdGL0ZoZnphcFBWQjF1TXpQU1l0R29XUERXV2d5Rm41Nit4Y0VTODZPCld4MEVaNVBWSFBVQnZRSGlmN1RtWG43UDFNRldyWmN3c213ZHRkUGluN1lxbHhUVnc2OGM3bW52dXppcWZIWEoKUHIrRXlqa25nOE5oaGJTRjFxTDRrZlVhS1RKTUFSSGJSODk2SjJWNU9TYzhOTS9SZmdiNktyU3B5VFhiOXhMNQpEQzhMdkl5Qm1kV241VXB3UThRelI3TWRoM0RDSytudy9xZ0MzUWt6V3diODBWdnh2UVdBMERjTlNQZDVtVWJkCjhXUnd3QUg2Q0pBR2ZRWllHQmtucGNoeWo1c1dUNm5tdXRnN2w0TXA5ckhmN0cvRFlQbHBMR1hQbFNlbGs3R2oKVGtLSlFwcFhLbGNDZUxBNmsxbitmdjY1dXpjNnFhRjZNZnIxbmlPUEtlRFpRdHhIeW1GbUZkbGdPaW13K0FvVwpkSHdsSEtKRHk0VjR5TDA2M0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    server: https://burgerbuilder-bkf4rsmk.d1ef29e5-8a16-47b8-89be-7567f850215d.privatelink.eastus.azmk8s.io:443\n  name: aks-burgerbuilder-prod-2147\ncontexts:\n- context:\n    cluster: aks-burgerbuilder-prod-2147\n    user: clusterUser_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147\n  name: aks-burgerbuilder-prod-2147\ncurrent-context: aks-burgerbuilder-prod-2147\nkind: Config\npreferences: {}\nusers:\n- name: clusterUser_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147\n  user:\n    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUZIakNDQXdhZ0F3SUJBZ0lSQUo2Yk9lVVY1Smxmd3RHakhkNXl1aUF3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVeE1EQTJNVEV4TURRMldoY05NamN4TURBMk1URXlNRFEyV2pBdwpNUmN3RlFZRFZRUUtFdzV6ZVhOMFpXMDZiV0Z6ZEdWeWN6RVZNQk1HQTFVRUF4TU1iV0Z6ZEdWeVkyeHBaVzUwCk1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBc3dxcnd5TjNVdG1TTkgrWFg1RkIKYVlnZytoeStEY2U1dXp0TFYya2hoN3ltNTZGZjI4TllzZWNnRy9ldzNwdXNzcEJoRG5hVXdHTzd0aU5lZVVXego4RW85UkZidWgrY0p5bDBSdWxZSDF2L0JlcjJQQUt1aDhsbTJWdXFhdXQ0eWl3NWZ2NFpnYXFzY0FrMGEwSkFRCjJ3TFhidmkzMXdvRVdhSnhpRm8wZ0dvRGMvY2JrSGlPM05FTC9hbnMyMHkzVzVIZlRiNW5OcFRHRDVtb0RBMzIKVWJmV3FLVGtXV2JMU1RmTXBLaGM2aUs4UjZJQlhMM2RQU0RNeExFZFl6TUsyczlGZ3NFZWMyRkFjOEE2cnpNMwp2TDFVS2ZvQW5wNGxxTWk1Y2FzUmVFdStiSzB0UWpnU0RBOFczTGZReTRHNHlybU5xWHVQTk4zSVd6aUkzTGZrCnBpNlN0dnZobUpza1ZWUmNwTFQ2NExrbXFXaElNS0FGWDc1UHpZU3JoY21rODY4d08xNStKRTRNZ0ZoVHVWMHEKZzBCbEY3WHBGYlE5ODBmQkpDWm0ya1I2bnRKWW5aWjk3eTN6dXdQc0FHM3RiZHpKcWM3Q2xscDFxQkZkdTFsegpxam9VVlVNN2tNbEltVGVCbjRndlhWaHBjMkhRR1FMbFBTWHlTTDY5SUpIVk1ENjdWcFV3V3pBM0ZsdkhiY3ZLCnlOQW8rVE8wOExaL29JRkhQZ1U2WlV5SWZ1QnByQ3N3RzEwQkZRMmI0QUlUREN0Uit2SFpBZ2J0MGwyaEg0S1kKYktEdXBPVVE3SUFtSHhaeWJUV3Mwa1BmSkVQNU80Z2hMTDlxRE1lbS9CVWV4dWNtVzlPRXVlZmU3NzNyKzhOYwpaTDYrKzR5elgxbkxGTGdzcElMTXU0Y0NBd0VBQWFOV01GUXdEZ1lEVlIwUEFRSC9CQVFEQWdXZ01CTUdBMVVkCkpRUU1NQW9HQ0NzR0FRVUZCd01DTUF3R0ExVWRFd0VCL3dRQ01BQXdId1lEVlIwakJCZ3dGb0FVQUN6SVB2eDYKeWFrUGxmRFJOZDB4MWlIb3ZGMHdEUVlKS29aSWh2Y05BUUVMQlFBRGdnSUJBSndQazRRWHlSU1ZGcTdWYjV4RApNOTBsQ2hYbXh6Tjc5TG9ZSDdtdFNCd2RxM3RNTjJudFJRR0hJS1ljQWtMLzBDcjBWaTVBRjA1NUlDUURzNEl4Ckp0RUZvREYvd08vaW84WmswVnVxL1FGRUpabWF1cEFxUWZZTWFXejV5eGVuTFAxL0huMXZ2dDRFeTBCQ1VQOTMKSFhMOW54eTh6eXJDR2FMb3ZKS3p0UC9JZ2I5YmpETktLcVArTUNVMWNWSHZUQ1Q2RmFVVjVsdlQ3alFGd2V0NApWU3VxeUttTnZSRS84N2VCYWN0NEhGcWpoWFI3OXo1eWhBdmRvZER1ZzdyakNiUnloM3lMWTB0Ry9RekhYRUNBCmFuckUvTHdtaUJxbzB5NlVWcjh6ZkxQQ2Z6TmlSNnJNbXd4bTFJaXhYTHZYbjJCemhLdTREcmdNSUJ0anhKTysKSWk0bGg1MmN4YjE4SGFtWlZKWng3Rk1NanhBUHRmQ01YTVdFeGVQckxXcVVDbEtYbWxNWktDemlOenZZTXlPagpQbHdId2d0V3hNU1I3Y1dMWTAyVW9lY3VDRW1zdUx2YWNFTzBtVTc3RGFrd3hRSjV1cDV2S29rejQ0ckh1WnlwCnJkVnB4YkF6Tm5EQWViZ3k1OWlFZXBaTFdHUHU5cnhRYXl0WU5wTEhrWE9KTWo1aHRPNUk4WXVmTndxOFB6YW8KNTcyeC9haG5MR09WMlFtdE9IU0xPVUpqQ01VZlo2ekJlbWkyMU1TcWpDQ0xranJiNllQc1orbkc1eUVUTUZsQwpPN0Z3UXBDRU1XR3Q0MmNUOVBwZzdUZGI5NjJkdFV4ZXRJaHB5ZTladmkyYWgyNGhIK3NiM1N2clpKRHBPbzczCldsUEx3dHJyN0RvbndpZm05NVluWTVsVwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==\n    client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS0FJQkFBS0NBZ0VBc3dxcnd5TjNVdG1TTkgrWFg1RkJhWWdnK2h5K0RjZTV1enRMVjJraGg3eW01NkZmCjI4TllzZWNnRy9ldzNwdXNzcEJoRG5hVXdHTzd0aU5lZVVXejhFbzlSRmJ1aCtjSnlsMFJ1bFlIMXYvQmVyMlAKQUt1aDhsbTJWdXFhdXQ0eWl3NWZ2NFpnYXFzY0FrMGEwSkFRMndMWGJ2aTMxd29FV2FKeGlGbzBnR29EYy9jYgprSGlPM05FTC9hbnMyMHkzVzVIZlRiNW5OcFRHRDVtb0RBMzJVYmZXcUtUa1dXYkxTVGZNcEtoYzZpSzhSNklCClhMM2RQU0RNeExFZFl6TUsyczlGZ3NFZWMyRkFjOEE2cnpNM3ZMMVVLZm9BbnA0bHFNaTVjYXNSZUV1K2JLMHQKUWpnU0RBOFczTGZReTRHNHlybU5xWHVQTk4zSVd6aUkzTGZrcGk2U3R2dmhtSnNrVlZSY3BMVDY0TGttcVdoSQpNS0FGWDc1UHpZU3JoY21rODY4d08xNStKRTRNZ0ZoVHVWMHFnMEJsRjdYcEZiUTk4MGZCSkNabTJrUjZudEpZCm5aWjk3eTN6dXdQc0FHM3RiZHpKcWM3Q2xscDFxQkZkdTFsenFqb1VWVU03a01sSW1UZUJuNGd2WFZocGMySFEKR1FMbFBTWHlTTDY5SUpIVk1ENjdWcFV3V3pBM0ZsdkhiY3ZLeU5BbytUTzA4TFovb0lGSFBnVTZaVXlJZnVCcApyQ3N3RzEwQkZRMmI0QUlUREN0Uit2SFpBZ2J0MGwyaEg0S1liS0R1cE9VUTdJQW1IeFp5YlRXczBrUGZKRVA1Ck80Z2hMTDlxRE1lbS9CVWV4dWNtVzlPRXVlZmU3NzNyKzhOY1pMNisrNHl6WDFuTEZMZ3NwSUxNdTRjQ0F3RUEKQVFLQ0FnQklZaTZKNEd0TDJBRlhieVFFTTRYMkE5Nk5MNVNZbnFBVXRZYWlxckt2SFZKKy84dHczaHVjSlB4aQp3ak5EOUQwUUhmWFhNcEsxNnp4SENTcVhMZHB1OFp5dVpkVGVwY1hjQmQ5MmJYU1M4K2hGVnFDYlhVaEdZZ1dwClF3VFdPcUhGZlVTeGVrSzlyVHJRSlZzTGFjc2V1Qm5mMS9iL0hhSWZtT0I4aHplRm1SYVhTaFpmUkpaQmFOU0gKczZ5NkJseDB6VmN4cDZJenUxY05sSW9QZ1krTmZ4enVKbWZaU3dreHF6ajFjc25Kc014Y3kzN3dmeVFVSkJBVgpEeVA1NkhkaGVmMjR2Sm15Zk9WaFJweVRHMHBUNkZrLzlUNU40bE1JVjBvOXpiTHM1dlp3R2wxYlVhN2VLRFdPCmUxUVRDbmxxb0RUSkNkYWVRWEhRaTEwdG1yejUwdXJTMUpZQ3hGNnVCaGIrMUdpTzVNcGtjMTEvWUdoTlRWY0gKdGVVWEJnRmJKU0t5YnN2MGtsRjV6L2psL1VBL1ZQVWQ4eEpldjVTeERFNmplTGdJSk41VFhuSzFmRzQ1SjRGZgppY01FNkhJQWVncXdqeTNTbHZkMFJrKzNsVzdDUVBHY2ozRW5XYWF1QXRIRVg3aWxVQXhxZ0o3VTBTaHljaTlaCkYySE5xM290KzFZL3VlOS9PeFBMZ1h2eW5tU2FhcGI5enlyS0d3Q01sM3JXdGQzOHN6bHNlQ1QvZFpYZnBHQW0KdlUxN0cvbEY4aVZQdEVrbnkwKzNKUStwQ0wrNWNFVzVtcEtZUGIwb3F1SktDaDZnMGlDMGJTTFlVcURkcm1pVgpTMW1qMi9LL0xkY0YwZmpRS2lKNmF5WHg5a291U0VtZ2dsTTVzUlhDdGxyVlNQOU5nUUtDQVFFQTV3cVFPOTJhCmNDald5MTFtb3pielcrU0UrQ0NYN0FnMzV6QW96dS8xMStDYS80TjhzcHYxTUVtQm04OGhEMHZ4SEUyR2RFdHUKRVU1aUtPUTBkeCtEY0NrQU9OK0EyUzZNOUlDZ1Jvcnc0N1F2Q2ptbFIwVVVEMTlNVS9HS2hQZzJXbytQQnZPVApTYjY4QlpiSTdiL21jZkhUbVhPY3RMcW1IVTVnM0ZpSnQwZTdYVzhYT3hOclFYWHR0alNMWXFtdGRqYVpOV1JEClB2ZkVDamNCN1ZhQ2tYMkkwVlZCMGJvQllraW1pVE9yLzBabjVBYjRNZ2JlNUFzbmNDMkUzSm5PNyszMlNtSDgKZzdYTXR0RnVxV096QndhYzZPOElNeGNtUDU0bFVob3BMMnAvZGtVL2x2c3c4UDhiM0VRQ3ZNM08vNUpNQVo1SQpRTXNzdHMwWWhXeGJCd0tDQVFFQXhtSVBzVW1TQ1YwcDc4NDVGYkJ2blZXSUcrY0NKb0xWRzZFQjlxMkhhK3pQClBBUmlMQklUT3FHZ1F2M3IyR3BuVTV4QWdSRnNDcWRBRU43aFpwaWFWL3ZDc3ZFQkNZSHdleDRGTW0zYUFNY0cKejdYdU01eFFUeFBMcS80UEtvVHFMcjBrZk9uSVlOaktuK1c4SVNOajVlVWZrVHg1MVB1WHlUNnl4Ujl6dzIyUQpDUGFJL0FXclk3bzlicEYvTmxhNllhaHY5cFJxVmxTYzZiTDRZN3J6cmp3UHljZDhSWTNxaVZWMUxMOEttWmMrCnp3cTRtMXVWWVZyb04wUTJBbnlSZUJBVVpVS1lIZEV4cm9QTklLMlpFWVFvMHZBak93NWhSVzQyNUNxVlRrOGMKbHN2Rkt0RFpXNURQcUc4bEFBRTI1U0gyZkxQNkpIV1JSTEFsWXJYN2dRS0NBUUVBcytLRG5qalJ6OVhjTndhSApyVGhSamhDRWZ2UlJsTkpwUkRVNDhMWGdRYTU4djhoT1JIb3RFdVdJWmhtRThmWDh5ajZLR3UzSHl1MnVlNHdDClZXVlIzdmZ0VmxxZVpYcGJBTnRNN3QrcTRuOGR5T1pOQ3dwN3JlUlM5MkN1cXd6ZXRPL2xPbEpYTVNteUZ0L3AKblVLMlY2MGpST3pBNis0TysrNVVkL3J2YnFZSStaeFBDQTM4aWtFWlRhM25nRy8vd0hTT0lRWHBYWk5uTFZUYQp5VUY3ODI4OElWQXlLT3FidlR3M2ZjZWZlT2dHWjRJTnFGVzFJUFNXUmo4S25QK2NJUzZ6ZmdLQXFzUFhtZGZDClExeCt2VStteDYya1FyTVpjcHJkRCttU2UzcDl0MFgvVnJ4SXhMcTdwR25IZjl6MStBS2Q3dnlmNE9MUDg1d0kKSlluUjdRS0NBUUJadkkvV3BTM2UrSHA0MURMMFFhd3JZajVBU04yckovRllIeHV4UnN1RUlVbVluMjc4K213aQpVR3diQVp0R2VOTW1lZjZmbzQ3WXZ0RDNFS3FxNndxZUUrNzlYSkVZaU9PTC9ZZGlTVmljazJyY1dESll2RE9ECm9iTzJxQ1NhR2llSVh0eDdlSkRBWmpBNTVnU1VoTnF5YWxNK01qbjJBcHlsVnF3dENNNG5yNDdBenl3bHZEYkwKMUxubkl2K0ZSL1BsS3ZrQ2RCNHAwUHB0cUJ3OW1KcVR6TzFqVzg0MTlEME1SRkRObmRrZ29zNnhmdXNFczRlOQowdzVKdVp3b3djcFhvZ1pueTVqZG0vdzZNYnAvTnFlUHlkVmhuV2lDVlQzZzF6c1RPTVB5K1V3NFZoSnBETEhWCmZvckFhUTQyazFZT2phOWV0MWJHV1R3Tjh4UG1NK1dCQW9JQkFDd0pWVnJhN25XL012aER6UkdqQlJjcGR1YmcKN1ZLSExmOHl5VVNpNlZGVHhnbTFBU0VUWVE1bTFwY0RKMkZwQkJFSUx1dFZqbDBDT2VNK3Z2c3FyRXcySlBtbgorYm5oaE1FR0t6bGZ3aUNlWnZmS3F4YlBFbG15Q2dXbzJrMXFaNGFPSDBDQUFZMis1ZkhENlJPb0Y1eTg3ZjdRCnRabWxTWnFCaHpFaGdUWVlkN25NWW91VzNiemNNbWlSYytKd2VHN1BGN0ZJcEl2YTlzNXh6Y2FBeEdmYnBSOUcKZUd5a2pFZEVEbm5uMEYxWktkNk5HdmJkcFVydXAyemNCaU5LZEwycERmWTMvTEJ4QnU1ZGFwZnFTRjFINmdHbQpEKzlLU25RVEVFZTl5RDkvSmhrdUs4OWxCYlFob3lQQm9VRHQ3czYyWnhLeGpWZlYwZXBjWFZRWitsZz0KLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K\n    token: tr658dbgpu9c42uxfezta7xm3n5f734q7x8g7kpsnel112a809um0h4b2hkapbbnv7kjwkxxelv0a2dm8mmn1w70zwgm2ogpeo75gaxj6ffwfjizvzav65qpgdarjxt8\n",
+            "kubelet_identity": [
+              {
+                "client_id": "e0669272-26a6-4fd0-9436-603ba269afd0",
+                "object_id": "1c368dc7-167c-4fbc-b812-d3f053444b8b",
+                "user_assigned_identity_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/MC_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147_eastus/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-burgerbuilder-prod-2147-agentpool"
+              }
+            ],
+            "kubernetes_version": "1.30",
+            "linux_profile": [],
+            "local_account_disabled": false,
+            "location": "eastus",
+            "maintenance_window": [],
+            "maintenance_window_auto_upgrade": [],
+            "maintenance_window_node_os": [],
+            "microsoft_defender": [],
+            "monitor_metrics": [],
+            "name": "aks-burgerbuilder-prod-2147",
+            "network_profile": [
+              {
+                "advanced_networking": [],
+                "dns_service_ip": "10.200.0.10",
+                "ip_versions": [
+                  "IPv4"
+                ],
+                "load_balancer_profile": [
+                  {
+                    "backend_pool_type": "NodeIPConfiguration",
+                    "effective_outbound_ips": [
+                      "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/MC_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147_eastus/providers/Microsoft.Network/publicIPAddresses/30e80e69-38e2-4ba1-8495-507c1d7bc098"
+                    ],
+                    "idle_timeout_in_minutes": 0,
+                    "managed_outbound_ip_count": 1,
+                    "managed_outbound_ipv6_count": 0,
+                    "outbound_ip_address_ids": [],
+                    "outbound_ip_prefix_ids": [],
+                    "outbound_ports_allocated": 0
+                  }
+                ],
+                "load_balancer_sku": "standard",
+                "nat_gateway_profile": [],
+                "network_data_plane": "azure",
+                "network_mode": "",
+                "network_plugin": "azure",
+                "network_plugin_mode": "",
+                "network_policy": "calico",
+                "outbound_type": "loadBalancer",
+                "pod_cidr": "",
+                "pod_cidrs": [],
+                "service_cidr": "10.200.0.0/16",
+                "service_cidrs": [
+                  "10.200.0.0/16"
+                ]
+              }
+            ],
+            "node_os_upgrade_channel": "NodeImage",
+            "node_resource_group": "MC_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147_eastus",
+            "node_resource_group_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/MC_rg-burgerbuilder-prod_aks-burgerbuilder-prod-2147_eastus",
+            "oidc_issuer_enabled": false,
+            "oidc_issuer_url": "",
+            "oms_agent": [],
+            "open_service_mesh_enabled": null,
+            "portal_fqdn": "ba1965f13225e6ec97512022aeae74c0-priv.portal.hcp.eastus.azmk8s.io",
+            "private_cluster_enabled": true,
+            "private_cluster_public_fqdn_enabled": false,
+            "private_dns_zone_id": "System",
+            "private_fqdn": "burgerbuilder-bkf4rsmk.d1ef29e5-8a16-47b8-89be-7567f850215d.privatelink.eastus.azmk8s.io",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "role_based_access_control_enabled": true,
+            "run_command_enabled": true,
+            "service_mesh_profile": [],
+            "service_principal": [],
+            "sku_tier": "Free",
+            "storage_profile": [],
+            "support_plan": "KubernetesOfficial",
+            "tags": {
+              "environment": "Prod"
+            },
+            "timeouts": null,
+            "upgrade_override": [],
+            "web_app_routing": [],
+            "windows_profile": [
+              {
+                "admin_password": "",
+                "admin_username": "azureuser",
+                "gmsa": [],
+                "license": ""
+              }
+            ],
+            "workload_autoscaler_profile": [],
+            "workload_identity_enabled": false
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_admin_config"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_admin_config_raw"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_config"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "kube_config_raw"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "windows_profile"
+              },
+              {
+                "type": "index",
+                "value": {
+                  "value": 0,
+                  "type": "number"
+                }
+              },
+              {
+                "type": "get_attr",
+                "value": "admin_password"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIyIn0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_ops",
+            "azurerm_virtual_network.vnet_main",
+            "random_integer.random"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg_appgw",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-appgw",
+            "location": "eastus",
+            "name": "nsg-appgw",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "security_rule": [],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "nsg-appgw",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg_backend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-backend",
+            "location": "eastus",
+            "name": "nsg-backend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "security_rule": [
+              {
+                "access": "Allow",
+                "description": "",
+                "destination_address_prefix": "*",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "22",
+                "destination_port_ranges": [],
+                "direction": "Inbound",
+                "name": "Allow_SSH_from_Ops_Backend",
+                "priority": 120,
+                "protocol": "Tcp",
+                "source_address_prefix": "10.0.30.0/24",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "",
+                "destination_address_prefix": "*",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "8080",
+                "destination_port_ranges": [],
+                "direction": "Inbound",
+                "name": "Allow_Frontend_to_Backend_API",
+                "priority": 110,
+                "protocol": "Tcp",
+                "source_address_prefix": "10.0.10.0/24",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "nsg-backend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg_frontend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-frontend",
+            "location": "eastus",
+            "name": "nsg-frontend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "security_rule": [
+              {
+                "access": "Allow",
+                "description": "",
+                "destination_address_prefix": "*",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "",
+                "destination_port_ranges": [
+                  "443",
+                  "80"
+                ],
+                "direction": "Inbound",
+                "name": "Allow_AppGW_to_Frontend",
+                "priority": 100,
+                "protocol": "Tcp",
+                "source_address_prefix": "10.0.1.0/24",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "",
+                "destination_address_prefix": "*",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "22",
+                "destination_port_ranges": [],
+                "direction": "Inbound",
+                "name": "Allow_SSH_from_Ops",
+                "priority": 120,
+                "protocol": "Tcp",
+                "source_address_prefix": "10.0.30.0/24",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "nsg-frontend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_group",
+      "name": "nsg_ops",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-ops",
+            "location": "eastus",
+            "name": "nsg-ops",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "security_rule": [],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "nsg-ops",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "rule_appgw_to_frontend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": "Allow",
+            "description": "",
+            "destination_address_prefix": "*",
+            "destination_address_prefixes": [],
+            "destination_application_security_group_ids": [],
+            "destination_port_range": "",
+            "destination_port_ranges": [
+              "443",
+              "80"
+            ],
+            "direction": "Inbound",
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-frontend/securityRules/Allow_AppGW_to_Frontend",
+            "name": "Allow_AppGW_to_Frontend",
+            "network_security_group_name": "nsg-frontend",
+            "priority": 100,
+            "protocol": "Tcp",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "source_address_prefix": "10.0.1.0/24",
+            "source_address_prefixes": [],
+            "source_application_security_group_ids": [],
+            "source_port_range": "*",
+            "source_port_ranges": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "Allow_AppGW_to_Frontend",
+            "network_security_group_name": "nsg-frontend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_frontend",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_appgw",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "rule_frontend_to_backend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": "Allow",
+            "description": "",
+            "destination_address_prefix": "*",
+            "destination_address_prefixes": [],
+            "destination_application_security_group_ids": [],
+            "destination_port_range": "8080",
+            "destination_port_ranges": [],
+            "direction": "Inbound",
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-backend/securityRules/Allow_Frontend_to_Backend_API",
+            "name": "Allow_Frontend_to_Backend_API",
+            "network_security_group_name": "nsg-backend",
+            "priority": 110,
+            "protocol": "Tcp",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "source_address_prefix": "10.0.10.0/24",
+            "source_address_prefixes": [],
+            "source_application_security_group_ids": [],
+            "source_port_range": "*",
+            "source_port_ranges": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "Allow_Frontend_to_Backend_API",
+            "network_security_group_name": "nsg-backend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_backend",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_frontend",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "rule_ssh_ops",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": "Allow",
+            "description": "",
+            "destination_address_prefix": "*",
+            "destination_address_prefixes": [],
+            "destination_application_security_group_ids": [],
+            "destination_port_range": "22",
+            "destination_port_ranges": [],
+            "direction": "Inbound",
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-frontend/securityRules/Allow_SSH_from_Ops",
+            "name": "Allow_SSH_from_Ops",
+            "network_security_group_name": "nsg-frontend",
+            "priority": 120,
+            "protocol": "Tcp",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "source_address_prefix": "10.0.30.0/24",
+            "source_address_prefixes": [],
+            "source_application_security_group_ids": [],
+            "source_port_range": "*",
+            "source_port_ranges": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "Allow_SSH_from_Ops",
+            "network_security_group_name": "nsg-frontend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_frontend",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_ops",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_network_security_rule",
+      "name": "rule_ssh_ops_backend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access": "Allow",
+            "description": "",
+            "destination_address_prefix": "*",
+            "destination_address_prefixes": [],
+            "destination_application_security_group_ids": [],
+            "destination_port_range": "22",
+            "destination_port_ranges": [],
+            "direction": "Inbound",
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-backend/securityRules/Allow_SSH_from_Ops_Backend",
+            "name": "Allow_SSH_from_Ops_Backend",
+            "network_security_group_name": "nsg-backend",
+            "priority": 120,
+            "protocol": "Tcp",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "source_address_prefix": "10.0.30.0/24",
+            "source_address_prefixes": [],
+            "source_application_security_group_ids": [],
+            "source_port_range": "*",
+            "source_port_ranges": [],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "Allow_SSH_from_Ops_Backend",
+            "network_security_group_name": "nsg-backend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_backend",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_ops",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "rg_main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/4421688c-0a8d-4588-8dd0-338c5271d0af/resourceGroups/rg-burgerbuilder-prod",
+            "location": "eastus",
+            "managed_by": "",
+            "name": "rg-burgerbuilder-prod",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "snet_appgw",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.1.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-appgw",
+            "ip_address_pool": [],
+            "name": "snet-appgw",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "snet-appgw",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41",
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "snet_backend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.20.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-backend",
+            "ip_address_pool": [],
+            "name": "snet-backend",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "snet-backend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41",
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "snet_data",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.40.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-data",
+            "ip_address_pool": [],
+            "name": "snet-data",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "snet-data",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41",
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "snet_frontend",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.10.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-frontend",
+            "ip_address_pool": [],
+            "name": "snet-frontend",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "snet-frontend",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41",
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "snet_ops",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.30.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-ops",
+            "ip_address_pool": [],
+            "name": "snet-ops",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "sharing_scope": "",
+            "timeouts": null,
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "snet-ops",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41",
+            "virtual_network_name": "vnet-burgerbuilder-prod"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet_network_security_group_association",
+      "name": "appgw_nsg_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-appgw",
+            "network_security_group_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-appgw",
+            "subnet_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-appgw",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_appgw",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_appgw",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet_network_security_group_association",
+      "name": "backend_nsg_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-backend",
+            "network_security_group_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-backend",
+            "subnet_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-backend",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_backend",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_backend",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet_network_security_group_association",
+      "name": "frontend_nsg_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-frontend",
+            "network_security_group_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-frontend",
+            "subnet_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-frontend",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_frontend",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_frontend",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet_network_security_group_association",
+      "name": "ops_nsg_assoc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-ops",
+            "network_security_group_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-ops",
+            "subnet_id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-ops",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "azurerm_network_security_group.nsg_ops",
+            "azurerm_resource_group.rg_main",
+            "azurerm_subnet.snet_ops",
+            "azurerm_virtual_network.vnet_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "vnet_main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_space": [
+              "10.0.0.0/16"
+            ],
+            "bgp_community": "",
+            "ddos_protection_plan": [],
+            "dns_servers": [],
+            "edge_zone": "",
+            "encryption": [],
+            "flow_timeout_in_minutes": 0,
+            "guid": "6930e46c-6744-44ef-bd6c-e23bfdebea01",
+            "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod",
+            "ip_address_pool": [],
+            "location": "eastus",
+            "name": "vnet-burgerbuilder-prod",
+            "private_endpoint_vnet_policies": "Disabled",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subnet": [
+              {
+                "address_prefixes": [
+                  "10.0.1.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-appgw",
+                "name": "snet-appgw",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-appgw",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              },
+              {
+                "address_prefixes": [
+                  "10.0.10.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-frontend",
+                "name": "snet-frontend",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-frontend",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              },
+              {
+                "address_prefixes": [
+                  "10.0.20.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-backend",
+                "name": "snet-backend",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-backend",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              },
+              {
+                "address_prefixes": [
+                  "10.0.30.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-ops",
+                "name": "snet-ops",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-ops",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              },
+              {
+                "address_prefixes": [
+                  "10.0.40.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/80646857-9142-494b-90c5-32fea6acbc41/resourceGroups/rg-burgerbuilder-prod/providers/Microsoft.Network/virtualNetworks/vnet-burgerbuilder-prod/subnets/snet-data",
+                "name": "snet-data",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "name": "vnet-burgerbuilder-prod",
+            "resource_group_name": "rg-burgerbuilder-prod",
+            "subscription_id": "80646857-9142-494b-90c5-32fea6acbc41"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.rg_main"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "random_integer",
+      "name": "random",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "2147",
+            "keepers": null,
+            "max": 9999,
+            "min": 1000,
+            "result": 2147,
+            "seed": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
