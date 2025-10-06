@@ -1,0 +1,49 @@
+name: CI - Build and Push to ACR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/build-push.yml'
+
+env:
+  ACR_NAME: ${{ secrets.ACR_NAME }}
+  IMAGE_NAME_BACKEND: burger-api
+  IMAGE_NAME_FRONTEND: burger-ui
+  TAG: latest
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # ----------------------------------------------------
+    # Step 1: Login to Azure Container Registry (ACR)
+    # ----------------------------------------------------
+    - name: Log in to Azure Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.ACR_NAME }}.azurecr.io
+        username: ${{ secrets.ACR_USERNAME }}  # Using Admin User
+        password: ${{ secrets.ACR_PASSWORD }}  # Using Admin Password
+        
+    # ----------------------------------------------------
+    # Step 2: Build and Push Backend Image
+    # ----------------------------------------------------
+    - name: Build and Push Backend
+      run: |
+        docker build backend -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_BACKEND }}:${{ env.TAG }}
+        docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_BACKEND }}:${{ env.TAG }}
+
+    # ----------------------------------------------------
+    # Step 3: Build and Push Frontend Image
+    # ----------------------------------------------------
+    - name: Build and Push Frontend
+      run: |
+        docker build frontend -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_FRONTEND }}:${{ env.TAG }}
+        docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_FRONTEND }}:${{ env.TAG }}
