@@ -19,8 +19,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copy custom Nginx configuration (assuming you have one, or use a basic one)
 # Since we don't have a custom config, we'll rely on the default settings or define a simple server block.
 
-# Copy the built application files from the build stage to Nginx's HTML directory
-COPY --from=build-stage /app/build /usr/share/nginx/html
+# تغيير 'build' إلى 'dist' لاحتمال استخدام إعدادات مختلفة للبناء
+COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 # Expose the default HTTP port
 EXPOSE 80
