@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: burger-ui
+  labels:
+    app: burger-builder
+    tier: ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: burger-builder
+      tier: ui
+  template:
+    metadata:
+      labels:
+        app: burger-builder
+        tier: ui
+    spec:
+      containers:
+      - name: burger-ui
+        image: acrbgbuilderprod2147.azurecr.io/burger-ui:latest # اسم ACR الخاص بكِ
+        ports:
+        - containerPort: 80 # Nginx port
+        env:
+        - name: REACT_APP_API_BASE_URL
+          value: "http://burger-api-svc.default.svc.cluster.local:80" # اسم خدمة Backend الداخلية
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: burger-ui-svc
+  labels:
+    app: burger-builder
+spec:
+  type: LoadBalancer # يسمح بالوصول من الإنترنت
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: burger-builder
+    tier: ui

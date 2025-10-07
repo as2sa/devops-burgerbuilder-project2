@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: burger-api
+  labels:
+    app: burger-builder
+    tier: api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: burger-builder
+      tier: api
+  template:
+    metadata:
+      labels:
+        app: burger-builder
+        tier: api
+    spec:
+      containers:
+      - name: burger-api
+        image: acrbgbuilderprod2147.azurecr.io/burger-api:latest # اسم ACR الخاص بكِ
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_URL
+          value: "jdbc:mysql://mysql-svc:3306/burgerdb"
+        - name: DB_USERNAME
+          value: "admin" # (يفترض أن هذا موجود في Secrets)
+        - name: DB_PASSWORD
+          value: "BurgerPassword123" # (يفترض أن هذا موجود في Secrets)
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: burger-api-svc
+  labels:
+    app: burger-builder
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: burger-builder
+    tier: api

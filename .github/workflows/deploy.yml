@@ -1,0 +1,61 @@
+name: CD - Deploy to AKS
+
+on:
+  workflow_run:
+    workflows: ["CI - Build and Push to ACR"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # ----------------------------------------------------
+    # Step 1: Azure Login using Service Principal
+    # (نستخدم AZURE_CLIENT_ID/SECRET/TENANT/SUB المخزنة كـ Secrets)
+    # ----------------------------------------------------
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        service-principal: true
+        creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+
+    # ----------------------------------------------------
+    # Step 2: Get AKS Credentials
+    # ----------------------------------------------------
+    - name: Get AKS Credentials
+      uses: azure/aks-set-context@v3
+      with:
+        resource-group: ${{ secrets.RESOURCE_GROUP }}
+        cluster-name: ${{ secrets.AKS_NAME }}
+
+    # ----------------------------------------------------
+    # Step 3: Deploy Backend (Deployment & Service)
+    # ----------------------------------------------------
+    - name: Deploy Backend to AKS
+      uses: azure/k8s-deploy@v4
+      with:
+        manifests: |
+          kubernetes/backend-deployment.yml
+        images: |
+          acrbgbuilderprod2147.azurecr.io/burger-api:${{ env.TAG }}
+        action: deploy
+
+    # ----------------------------------------------------
+    # Step 4: Deploy Frontend (Deployment & LoadBalancer Service)
+    # ----------------------------------------------------
+    - name: Deploy Frontend to AKS
+      uses: azure/k8s-deploy@v4
+      with:
+        manifests: |
+          kubernetes/frontend-deployment.yml
+        images: |
+          acrbgbuilderprod2147.azurecr.io/burger-ui:${{ env.TAG }}
+        action: deploy
