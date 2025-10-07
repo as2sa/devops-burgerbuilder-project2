@@ -37,7 +37,8 @@ jobs:
     # ----------------------------------------------------
     - name: Build and Push Backend
       run: |
-        docker build backend -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_BACKEND }}:${{ env.TAG }}
+        # Changed 'docker build backend' to specify Dockerfile path and use the root context '.'
+        docker build -f backend/Dockerfile -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_BACKEND }}:${{ env.TAG }} .
         docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_BACKEND }}:${{ env.TAG }}
 
     # ----------------------------------------------------
@@ -45,5 +46,6 @@ jobs:
     # ----------------------------------------------------
     - name: Build and Push Frontend
       run: |
-        docker build frontend -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_FRONTEND }}:${{ env.TAG }}
+        # Changed 'docker build frontend' to specify Dockerfile path and use the root context '.'
+        docker build -f frontend/Dockerfile -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_FRONTEND }}:${{ env.TAG }} .
         docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME_FRONTEND }}:${{ env.TAG }}
