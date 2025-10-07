@@ -1,5 +1,5 @@
-# Stage 1: Build the application using a Maven base image
-FROM maven:3.8.7-eclipse-temurin-17-alpine AS build
+# Stage 1: Build the application using a Maven base image (Now using Java 21)
+FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
 WORKDIR /app
 
 # Copy project files and build the JAR
@@ -10,8 +10,8 @@ COPY backend/src ./src
 # Build the Spring Boot application (will create a JAR file in target/)
 RUN mvn clean package -DskipTests
 
-# Stage 2: Create the final, small runtime image
-FROM eclipse-temurin:17-jre-alpine
+# Stage 2: Create the final, small runtime image (Now using Java 21)
+FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copy the built JAR from the build stage
