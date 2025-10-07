@@ -3,8 +3,9 @@ FROM maven:3.8.7-eclipse-temurin-17-alpine AS build
 WORKDIR /app
 
 # Copy project files and build the JAR
-COPY pom.xml .
-COPY src ./src
+# المسار يحدد من سياق البناء (جذر المشروع)
+COPY backend/pom.xml .
+COPY backend/src ./src
 
 # Build the Spring Boot application (will create a JAR file in target/)
 RUN mvn clean package -DskipTests

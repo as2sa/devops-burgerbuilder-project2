@@ -3,11 +3,11 @@ FROM node:18-alpine AS build-stage
 WORKDIR /app
 
 # Copy package files and install dependencies
-COPY package*.json ./
+COPY frontend/package*.json ./
 RUN npm install
 
 # Copy application source code and build the final static assets
-COPY . .
+COPY frontend/. .
 RUN npm run build
 
 # Stage 2: Serve the application using a lightweight Nginx image
