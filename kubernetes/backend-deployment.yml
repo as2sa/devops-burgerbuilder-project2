@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: burger-api
-        image: acrbgbuilderprod2147.azurecr.io/burger-api:latest # اسم ACR الخاص بكِ
+        image: acrbgbuilderas.azurecr.io/burger-api:latest # <== تم التعديل إلى الاسم الجديد
         ports:
         - containerPort: 8080
         env:
